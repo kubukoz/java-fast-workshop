@@ -4,21 +4,23 @@ import static java.lang.Math.pow;
 import static java.lang.Math.sqrt;
 
 public class Klasy {
-    public void main(String[] args) {
+    public static void main(String[] args) {
 
         Zwierze zwierze = new Zwierze();
 
         System.out.println(zwierze.hello());
 
-        Pies pies = new Pies("pies", 10);
+        Zwierze pies = new Pies("pies", 10);
 
         System.out.println(pies.hello());
 
         Point a = new Point(800, 600);
         Point b = new Point(1000, 800);
+
+        Point c = Point.origin();
+
         System.out.println(new Line(a, b).length());
 
-        Point.origin();
     }
 }
 
@@ -28,6 +30,22 @@ class Point {
     //konstruktor
     public Point(int x, int y) {
         this.x = x;
+        this.y = y;
+    }
+
+    public int getX() {
+        return x;
+    }
+
+    public void setX(int x) {
+        this.x = x;
+    }
+
+    public int getY() {
+        return y;
+    }
+
+    public void setY(int y) {
         this.y = y;
     }
 
@@ -46,10 +64,8 @@ class Line {
     }
 
     //metoda
-    public int length() {
-        return (int) sqrt(
-                pow(b.y - a.y, 2) + pow(b.x - a.x, 2)
-        );
+    public double length() {
+        return sqrt(pow(b.y - a.y, 2) + pow(b.x - a.x, 2));
     }
 }
 
@@ -60,13 +76,13 @@ class Zwierze {
 
     @Override
     public String toString() {
-        return "Zwierze()";
+        return "Zwierze";
     }
 }
 
 class Pies extends Zwierze {
-    private String race;
-    private int age;
+    private final String race;
+    private final int age;
 
     public Pies(String race, int age) {
         this.race = race;
@@ -77,20 +93,13 @@ class Pies extends Zwierze {
         return race;
     }
 
-    public void setRace(String race) {
-        this.race = race;
-    }
-
     public int getAge() {
         return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
     }
 
     @Override
     public String toString() {
         return "Pies(race = " + race + ", age = " + age + ")";
     }
+
 }

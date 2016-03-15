@@ -12,8 +12,8 @@ public class AnatomiaPlain {
         final List<Integer> ints = Arrays.asList(1, 2, 3, 4);
 
         for (int i = 0; i < ints.size(); i++) {
-            int j = i + 1;
-            System.out.println("Element: " + i + ", element + 1: " + j);
+            int j = ints.get(i);
+            System.out.println("Element: " + i + ", wartość: " + j);
         }
     }
 }

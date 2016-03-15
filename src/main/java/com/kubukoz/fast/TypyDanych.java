@@ -3,8 +3,10 @@ package com.kubukoz.fast;
 import java.util.*;
 
 public class TypyDanych {
+
     public static void main(String[] args) {
         int num = 5;
+
         float numF = 10.0f;
         double numD = 20.0d; //albo 20.0
 
@@ -24,10 +26,14 @@ public class TypyDanych {
         boolean or = T || F; //true
         boolean and = T && F; //false
 
+
         String name = "hello world!";
+
         System.out.println(name.length()); //12
-        String nameWithNumber = name + " " + 19; //hello world 19
+        String nameWithNumber = name + " 1" + 19; //hello world 119
         String twoStrings = "hello " + "world";
+
+        int xxxx = 1 + 2;
 
 
 
@@ -38,10 +44,6 @@ public class TypyDanych {
         Object o = "wrzucam stringa, bo moge";
 
 
-
-        //tablica o stałym rozmiarze
-        int[] liczby = {1, 2, 3, 4};
-
         /*
          * jeśli inicjalizacja tablicy, listy, obiektu się nie powiedzie
          * czyli tak jak w C dostalibyśmy NULL na mallocu
@@ -50,13 +52,16 @@ public class TypyDanych {
          * oprócz errorów są jeszcze wyjątki, też później
          * */
 
+        //tablica o stałym rozmiarze
+        int[] liczby = {1, 2, 3, 4};
+
         System.out.println(liczby.length); //4 :D
 
         liczby[3] = 5; //można zmieniać tablicę
 
 
         //wywali się
-        liczby[5] = 3; //nie można zmieniać ich rozmiaru - tu dostaniemy wyjątek.
+//        liczby[5] = 3; //nie można zmieniać ich rozmiaru - tu dostaniemy wyjątek.
 
         System.out.println(Arrays.toString(liczby));
 
@@ -70,6 +75,7 @@ public class TypyDanych {
         List<String> listaStringow = Arrays.asList("a", "bbb");
 
         List<String> drugaListaStringow = new ArrayList<>();
+
         drugaListaStringow.add("asdf");
         drugaListaStringow.add("asdf");
         drugaListaStringow.add("bsdf");
@@ -77,6 +83,8 @@ public class TypyDanych {
         drugaListaStringow.add("yolo");
 
         System.out.println(drugaListaStringow.size()); //5
+
+        Object xyyyyyyyy = "";
 
         Set<String> zestawString = new HashSet<>();
         zestawString.add("hello");
